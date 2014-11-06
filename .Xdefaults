@@ -1,0 +1,9 @@
+URxvt.perl-ext-common: default,tabbed
+URxvt.background: black
+URxvt.foreground: #5dff9e
+!URxvt.foreground: white
+URxvt.font: xft:Terminus:pixelsize=15:autohint=true
+URxvt.boldFont: xft:Terminus:pixelsize=15:autohint=true
+URxvt.loginShell: true
+Urxvt.transparent: false
+!,antialias=true
