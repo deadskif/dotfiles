@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/skif/devel/c++/_ogre_/SkyBox/src'
+let g:netrw_dirhist_2='/home/skif/.ciup/dbus'
+let g:netrw_dirhist_3='/home/skif/p/_miem_/spo/examples-v3/C/python'
+let g:netrw_dirhist_4='/home/skif/p/_miem_/spo/examples-v3/C/python/tests'
+let g:netrw_dirhist_5='/etc/ConsoleKit/run-seat.d'
+let g:netrw_dirhist_6='/home/skif/miem/Диплом'
+let g:netrw_dirhist_7='/mnt/data/games/rtcw/main'
+let g:netrw_dirhist_8='/etc/ConsoleKit/run-seat.d'
+let g:netrw_dirhist_9='/home/skif/.vimperator'
