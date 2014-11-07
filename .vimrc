@@ -1,7 +1,17 @@
-set nocp
-filetype plugin on
-filetype indent on
+"call pathogen#infect()
+filetype indent plugin on
+syntax enable
+set ofu=syntaxcomplete#Complete
+set completeopt=menu
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set fileencodings=utf8,cp1251,koi8r,cp866
+
 set nu
+"set background=dark
 set nowrap
 set iskeyword=@,48-57,_,192-255
 
@@ -9,15 +19,24 @@ if has("gui_running")
 	set guifont=terminus
 	colorscheme gentooish
 else
-	colorscheme elflord
+    colorscheme elflord
+    set mouse=a
 endif
 
+" Поиск по набору текста (очень полезная функция)
+set incsearch
+" Опции сесссий
+set sessionoptions=curdir,buffers,tabpages
+" Не выгружать буфер, когда переключаемся на другой
+" Это позволяет редактировать несколько файлов в один и тот же момент без необходимости сохранения каждый раз
+" когда переключаешься между ними
+set hidden
 "vmap <C-C> "+yi
 "imap <C-V> <esc>"+gPi
 nmap T :tabnew
 nmap t :tabnew<CR>
-set sw=4
-set et
+"set sw=4
+"set et
 "if syntax == 'python' 
 "	set et  
 "	set sw=4
@@ -105,4 +124,51 @@ map Ю >
 
 set foldenable
 set foldmethod=indent
+nmap <C-N>v :NERDTree<cr>
+vmap <C-N>v <esc>:NERDTree<cr>i
+imap <C-N>v <esc>:NERDTree<cr>i
+"nmap <C-N>v :NERDTreeTabsOpen<CR>
+"vmap <C-N>v <esc>:NERDTreeTabsOpen<CR>i
+"imap <C-N>v <esc>:NERDTreeTabsOpen<CR>i
+
+nmap <C-N>x :NERDTreeClose<cr>
+vmap <C-N>x <esc>:NERDTreeClose<cr>i
+imap <C-N>x <esc>:NERDTreeClose<cr>i
+"nmap <C-N>x :NERDTreeTabsClose<CR>
+"vmap <C-N>x <esc>:NERDTreeTabsClose<CR>i
+"imap <C-N>x <esc>:NERDTreeTabsClose<CR>i
+
+" F5 - просмотр списка буферов
+nmap <F5> <Esc>:BufExplorer<cr>
+vmap <F5> <esc>:BufExplorer<cr>
+imap <F5> <esc><esc>:BufExplorer<cr>
+
+" F6 - предыдущий буфер
+map <F6> :bp<cr>
+vmap <F6> <esc>:bp<cr>i
+imap <F6> <esc>:bp<cr>i
+
+" F7 - следующий буфер
+map <F7> :bn<cr>
+vmap <F7> <esc>:bn<cr>i
+imap <F7> <esc>:bn<cr>i
+
+inoremap <C-Space> <C-X><C-O>
+"inoremap <Menu> <C-X><C-O>
+"
+function ReCTags()
+    ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    :!ctags -R --extra=+f --fields=+Szt .
+    echo "Tags regenerated"
+endfunction
+function SaveSession()
+    :mksession! session.vim
+    echo "Session resaved"
+endfunction
+if file_readable('tags')
+    "call ReCTags()
+endif
+map <silent> <leader>2 :diffget 2<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
+map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
