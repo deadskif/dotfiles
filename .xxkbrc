@@ -1,0 +1,10 @@
+! XXkb.mainwindow.in_tray: yes
+XXkb.mainwindow.type: tray
+XXkb.mainwindow.geometry: 16x16+0+0
+XXkb.button.enable: no
+! XXkb.controls.button_delete: no
+
+XXkb.controls.add_when_change: yes
+XXkb.controls.focusout: yes
+
+! XXkb.app_list.wm_class_class.start_alt: Firefox
