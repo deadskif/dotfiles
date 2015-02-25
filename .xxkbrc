@@ -1,8 +1,17 @@
 ! XXkb.mainwindow.in_tray: yes
 XXkb.mainwindow.type: tray
-XXkb.mainwindow.geometry: 16x16+0+0
+! XXkb.mainwindow.geometry: 16x16+0+0
+XXkb.mainwindow.geometry: 15x15
+XXkb.mainwindow.image.1: en15.xpm
+XXkb.mainwindow.image.2: ru15.xpm
+
 XXkb.button.enable: no
 ! XXkb.controls.button_delete: no
+! XXkb.mainwindow.label.enable: yes
+XXkb.mainwindow.label.text.1: en
+XXkb.mainwindow.label.text.2: ru
+XXkb.mainwindow.label.font: -misc-*-r-*-16-*
+XXkb.mainwindow.label.background: #3F3F3F
 
 XXkb.controls.add_when_change: yes
 XXkb.controls.focusout: yes
