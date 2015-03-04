@@ -1,3 +1,6 @@
+" Gentoo-based version
+" use app-vim/{airline,gitgutter,nerdtree}
+"
 "call pathogen#infect()
 filetype indent plugin on
 syntax enable
@@ -172,3 +175,4 @@ map <silent> <leader>2 :diffget 2<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
 map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
+set laststatus=2
