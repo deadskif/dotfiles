@@ -1,3 +1,6 @@
+" Gentoo-based version
+" use app-vim/{airline,gitgutter,nerdtree,bufexplorer,dirdiff,vim-spell-{en,ru}}
+"
 "call pathogen#infect()
 filetype indent plugin on
 syntax enable
@@ -20,7 +23,7 @@ if has("gui_running")
 	set guifont=terminus
 	colorscheme gentooish
 else
-    colorscheme elflord
+    colorscheme molokai
     set mouse=a
 endif
 
@@ -173,3 +176,4 @@ map <silent> <leader>2 :diffget 2<CR> :diffupdate<CR>
 map <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
 map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
+set laststatus=2
