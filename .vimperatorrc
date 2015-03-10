@@ -2,7 +2,7 @@
 
 set runtimepath=/home/skif/.vimperator
 source! /home/skif/.vimperatorrc.local
-toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 " Russian language keyboard mappings (UTF-8)
 map ё `

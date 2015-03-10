@@ -52,7 +52,8 @@ set so=7
 ":setlocal spell spelllang=en
 ":set softtabstop=2
 ":set et
-set spelllang=tu_yo,en_us
+"set spelllang=tu_yo,en_us
+setlocal spell spelllang=ru,en
 
 map ё `
 map й q
