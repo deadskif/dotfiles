@@ -1,8 +1,11 @@
 ! XXkb.mainwindow.in_tray: yes
 XXkb.mainwindow.type: tray
-XXkb.mainwindow.geometry: 16x16+0+0
+!XXkb.mainwindow.geometry: 16x16+0+0
+XXkb.mainwindow.geometry: 15x15+0+0
 XXkb.button.enable: no
 ! XXkb.controls.button_delete: no
+XXkb.mainwindow.label.enable: yes
+XXkb.mainwindow.label.font: xft:Terminus:pixelsize=15:autohint=true
 
 XXkb.controls.add_when_change: yes
 XXkb.controls.focusout: yes

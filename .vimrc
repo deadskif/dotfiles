@@ -16,6 +16,7 @@ set nowrap
 set iskeyword=@,48-57,_,192-255
 
 if has("gui_running")
+    set guioptions=aegimrltT
 	set guifont=terminus
 	colorscheme gentooish
 else
@@ -123,7 +124,7 @@ map Ю >
 "
 
 set foldenable
-set foldmethod=indent
+set foldmethod=syntax
 nmap <C-N>v :NERDTree<cr>
 vmap <C-N>v <esc>:NERDTree<cr>i
 imap <C-N>v <esc>:NERDTree<cr>i
