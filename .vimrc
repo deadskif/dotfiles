@@ -19,6 +19,7 @@ set nowrap
 set iskeyword=@,48-57,_,192-255
 
 if has("gui_running")
+    set guioptions=aegimrltT
 	set guifont=terminus
 	colorscheme gentooish
 else
@@ -51,7 +52,8 @@ set so=7
 ":setlocal spell spelllang=en
 ":set softtabstop=2
 ":set et
-set spelllang=tu_yo,en_us
+"set spelllang=tu_yo,en_us
+setlocal spell spelllang=ru,en
 
 map ё `
 map й q
@@ -126,7 +128,7 @@ map Ю >
 "
 
 set foldenable
-set foldmethod=indent
+set foldmethod=syntax
 nmap <C-N>v :NERDTree<cr>
 vmap <C-N>v <esc>:NERDTree<cr>i
 imap <C-N>v <esc>:NERDTree<cr>i
