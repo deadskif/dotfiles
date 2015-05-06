@@ -22,6 +22,7 @@ if has("gui_running")
     set guioptions=aegimrltT
 	set guifont=terminus
 	colorscheme gentooish
+    setlocal spell spelllang=ru,en
 else
     colorscheme molokai
     set mouse=a
@@ -53,7 +54,6 @@ set so=7
 ":set softtabstop=2
 ":set et
 "set spelllang=tu_yo,en_us
-setlocal spell spelllang=ru,en
 
 map ё `
 map й q
@@ -163,9 +163,15 @@ inoremap <C-Space> <C-X><C-O>
 "
 function ReCTags()
     ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-    :!ctags -R --extra=+f --fields=+Szt .
+    ":!ctags -R --extra=+f --fields=+Szt .
+    :!ctags -R --c++-kinds=+p --fields=+iaSz --extra=+qf .
     echo "Tags regenerated"
 endfunction
+function RePyTags()
+    :!ctags -R --python-kinds=-i --fields=+iaSz --extra=+qf .
+    echo "Tags regenerated"
+endfunction
+
 function SaveSession()
     :mksession! session.vim
     echo "Session resaved"
@@ -178,3 +184,4 @@ map <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
 map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 set laststatus=2
+highlight clear SignColumn
