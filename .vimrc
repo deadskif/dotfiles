@@ -1,6 +1,6 @@
 " Gentoo-based version
-" use app-vim/{airline,gitgutter,nerdtree,bufexplorer,dirdiff,vim-spell-{en,ru}}
-"
+" use app-vim/{airline,gitgutter,nerdtree,bufexplorer,dirdiff,vim-spell-{en,ru},fugitive}
+" use media-fonts/powerline-fonts::raiagent[anonymouspro,dejavusansmono,droidsansmono,liberationmono,terminus_pcf]
 "call pathogen#infect()
 filetype indent plugin on
 syntax enable
@@ -18,16 +18,20 @@ set nu
 set nowrap
 set iskeyword=@,48-57,_,192-255
 
+"colorscheme molokai
+"colorscheme desert
+colorscheme jellybeans
 if has("gui_running")
     set guioptions=aegimrltT
 	set guifont=terminus
-	colorscheme gentooish
+	"colorscheme gentooish
     setlocal spell spelllang=ru,en
+    let g:airline_powerline_fonts = 1
 else
-    colorscheme molokai
     set mouse=a
 endif
 
+set cursorline
 " Поиск по набору текста (очень полезная функция)
 set incsearch
 " Опции сесссий
@@ -136,6 +140,9 @@ imap <C-N>v <esc>:NERDTree<cr>i
 "vmap <C-N>v <esc>:NERDTreeTabsOpen<CR>i
 "imap <C-N>v <esc>:NERDTreeTabsOpen<CR>i
 
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+
 nmap <C-N>x :NERDTreeClose<cr>
 vmap <C-N>x <esc>:NERDTreeClose<cr>i
 imap <C-N>x <esc>:NERDTreeClose<cr>i
@@ -164,7 +171,7 @@ inoremap <C-Space> <C-X><C-O>
 function ReCTags()
     ":!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
     ":!ctags -R --extra=+f --fields=+Szt .
-    :!ctags -R --c++-kinds=+p --fields=+iaSz --extra=+qf .
+    :!ctags -R --c++-kinds=+pcd --fields=+iaSzl --extra=+qf .
     echo "Tags regenerated"
 endfunction
 function RePyTags()
@@ -185,3 +192,18 @@ map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 set laststatus=2
 highlight clear SignColumn
+
+" GitGutter
+"nmap [h <Plug>GitGutterPrevHunk
+"nmap ]h <Plug>GitGutterNextHunk
+"nmap <Leader>hs <Plug>GitGutterStageHunk
+"nmap <Leader>hr <Plug>GitGutterRevertHunk
+
+
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+
+"let g:airline#extensions#hunks#enabled = 1
+"let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#branch#empty_message = '<!!>'
+

@@ -37,6 +37,16 @@ snippet once
 	${2}
 
 	#endif /* end of include guard: $1 */
+
+# C++ header guard
+snippet Cppg
+	#ifdef __cplusplus
+	extern "C" {
+	#endif
+	${1}
+	#ifdef __cplusplus
+	} /* extern "C" */
+	#endif
 # If Condition
 snippet if
 	if (${1:/* condition */}) {
