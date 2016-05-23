@@ -174,6 +174,14 @@ function ReCTags()
     :!ctags -R --c++-kinds=+pcd --fields=+iaSzl --extra=+qf .
     echo "Tags regenerated"
 endfunction
+function ReSystemCTags()
+    :!ctags -R --c++-kinds=+pcd --fields=+iaSzl --extra=+qf /usr/include/*.h -f ~/.vim/ctags/tags
+    :!ctags -R --c++-kinds=+pcd --fields=+iaSzl --extra=+qf -a /usr/include/sys/*.h -f ~/.vim/ctags/tags
+    echo "Tags regenerated"
+endfunction
+
+set tags+=~/.vim/ctags/tags
+
 function RePyTags()
     :!ctags -R --python-kinds=-i --fields=+iaSz --extra=+qf .
     echo "Tags regenerated"
