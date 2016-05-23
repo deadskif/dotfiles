@@ -59,6 +59,9 @@ set so=7
 ":set et
 "set spelllang=tu_yo,en_us
 
+set colorcolumn=80
+set list listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+
 map ё `
 map й q
 map ц w
