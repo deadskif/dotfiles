@@ -22,6 +22,14 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias man="LC_ALL="ru_RU.UTF-8" man"
+alias hrepn="grep -HRn"
+
+alias udmountb='udisksctl mount -b'
+udmountl () {
+    local label="$1"
+    shift
+    udisksctl mount -b /dev/disk/by-label/"${label}" "$@"
+}
 
 # From LOR
 alias weather='lynx --dump http://weather.noaa.gov/weather/current/UUDD.html | sed -n "/Temperature/s/[0-9][0-9]\? F (//p; /Humidity/p" | tr -d ")"'
@@ -33,4 +41,22 @@ if [ "${PATH}" = "${PATH%%:${HOME}/bin}" ]; then
 	export PATH="${PATH}:${HOME}/bin"
 fi
 
+# append to history file instead of overwriting it when shell exits
+shopt -s histappend 2> /dev/null
+
+# treat directory paths as arguments to an implicit cd command
+shopt -s autocd 2> /dev/null
+
+# the number of commands to remember in the command history
+export HISTSIZE='100000'
+
+# don't save duplicates, l, ll, ls, bf, bg, su and exit commands to command
+# history
+export HISTIGNORE='&:l:ll:ls:[bf]g:su:exit'
+
+# remove all previous lines matching the current line from the history list
+# before that line is saved
+export HISTCONTROL='erasedups'
 #export PP="10$PP"
+export MOUNT="/run/media/${USER}"
+

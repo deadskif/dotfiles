@@ -7,3 +7,4 @@
 [ -f "$HOME/.TODO" ] && cat $HOME/.TODO
 [ -f "$HOME/.TODO_ONCE" ] && cat $HOME/.TODO_ONCE
 [ -f "$HOME/.bash_profile.local" ] && . "$HOME/.bash_profile.local"
+
