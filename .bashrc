@@ -23,6 +23,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias man="LC_ALL="ru_RU.UTF-8" man"
 alias hrepn="grep -HRn"
+alias gitka='gitk --all&'
 
 alias udmountb='udisksctl mount -b'
 udmountl () {
